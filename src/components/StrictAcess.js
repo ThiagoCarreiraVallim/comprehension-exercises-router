@@ -5,10 +5,12 @@ import Home from './Home';
 class StrictAcess extends React.Component {
   render() {
     const { name, senha } = this.props;
-    let login = <p>Welcome {name}!</p>;
-    if (name !== 'joao' & senha !== '1234') {
-      window.alert('Usuário e senha incorretos');
+
+    let login = <div><h3>Area Restrita!</h3><h4>Welcome {name}!</h4></div>;
+
+    if (name !== 'joao' && senha !== '1234') {
       login = <Redirect to="/" />;
+      window.alert('Usuário e senha incorretos');
     }
     return (
       <BrowserRouter>
